@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    	<title>ERPeqEmp: Bodega VinosLOF</title>
+    	<meta charset="utf-8"/>
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1" />
+        <meta name="author" content="Maria del Valle Iglesias">
+        <!-- description -->
+        <meta name="description" content="ERP for small companies">
+        <!-- favicon -->
+        <link rel="shortcut icon" href="../images/favicon.png">
+        <!-- bootstrap -->
+        <link rel="stylesheet" href="../css/bootstrap.min.css" />
+        <!-- style -->
+        <link rel="stylesheet" href="../css/style.css" />
+        <!-- responsive css -->
+        <link rel="stylesheet" href="../css/responsive.css" />
+        <!-- js -->
+        <script type="text/javascript" src="../js/jquery.js"></script>
+        <script type="text/javascript" src="../js/main.js"></script>        
+    </head>
+    <body>
+        <!-- menu popup -->
+        <a class="trigger_popup_fricc btn btn-black">MENÚ</a>
+        <div class="hover_bkgr_fricc">
+            <span class="helper"></span>
+            <div>
+                <div class="popupCloseButton">&times;</div>
+                <p><a class="menu" href="../index.html">Home</a></p>
+                <p><a class="menu" href="clientes.html">Clientes</a></p>
+                <p><a class="menu" href="pedidos.html">Pedidos</a></p>
+                <p><a class="menu" href="stock.html">Stock</a></p>
+            </div>
+        </div>
+        <!-- end of menu -->  
+        <!-- form: add client to data base -->       
+        <div class="container margen-arriba-3">
+            <div class="row">            
+                <form id="formio" action="../functional/subirCli.php" method="post" enctype="multipart/form-data">
+                    <p>Nombre y apellidos / Razón social: <input type="text" name="nombre"></p>                
+                    <p id="esp">Nacionalidad Española <input type="checkbox" name="spain" id="spain"></p>
+                    <p>NIF / CIF: <input type="text" name="nif" id="nif" placeholder="Sin espacios ni guiones"></p>
+                    <p>Dirección: <input type="text" name="direccion"></p>
+                    <p>País: <input type="text" name="pais"></p>
+                    <p>Teléfono: <input type="text" name="telefono"></p>
+                    <p>Tipo de IVA: <input type="text" name="IVA"></p>
+                    <input type="submit" name="submit" value="Subir">
+                </form>            
+            </div>
+        </div> 
+        <!-- end form: add client to data base -->  
+    </body>
+    <script type="text/javascript">
+    //validate dni in crearCli.html
+    $("#formio").on("submit", function(e){           
+        var correcto = 1;
+        var regexcif = new RegExp('(^([a-z]|[A-Z])\\d{7}([a-z]|[A-Z]|[0-9]){1}$)|(^\\d{8}([a-z]|[A-Z])$)');
+        if($('form p[id="esp"]').find('input[name="spain"]').is(":checked")){
+            if($("#nif").val()==""){
+                e.preventDefault();
+                correcto = 0;
+                $("#nif").css("background-color","#ff9999");
+                $("#nif").val("");
+                $("#nif").attr("placeholder","No puede estar vacio");
+            }else if(!regexcif.test($("#nif").val())){
+                e.preventDefault();
+                correcto = 0;
+                $("#nif").css("background-color","#ff9999");
+                $("#nif").val("");
+                $("#nif").attr("placeholder","El CIF/NIF es incorrecto");
+            }else{
+                $("#nif").css("background-color","white");
+            } 
+        }else {
+            var correcto = 1;
+        }
+        if($('form p[id="esp"]').find('input[name="spain"]').is(":not(:checked)")){
+            //validate if is empty, anyway
+            if($("#nif").val()==""){
+                e.preventDefault();
+                correcto = 0;
+                $("#nif").css("background-color","#ff9999");
+                $("#nif").val("");
+                $("#nif").attr("placeholder","No puede estar vacio");
+            }else{
+                $("#nif").css("background-color","white");
+            }
+        }
+
+        if(correcto == 0){
+            return false;
+        } else {
+            return true;          
+        }   
+              
+    });
+    </script>
+</html>

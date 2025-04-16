@@ -1,0 +1,376 @@
+@charset "utf-8";
+
+/* ----------------------------------
+
+Name: style.css
+Version: 1
+
+-------------------------------------
+
+Table of contents
+        
+    01. Google font
+    02. Reset
+    03. Typography
+    04. Typography Color
+    05. Background Color
+    06. Custom
+    07. Margin
+    08. Popup
+    09. Button
+    10. Table
+*/
+
+/* ===================================
+    Google font
+====================================== */
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900');
+
+/* ===================================
+    Reset
+====================================== */
+
+*{transition-timing-function: ease-in-out; -ms-transition-timing-function: ease-in-out; -moz-transition-timing-function: ease-in-out; -webkit-transition-timing-function: ease-in-out; -o-transition-timing-function: ease-in-out; transition-duration: .2s; -ms-transition-duration: .2s; -moz-transition-duration: .2s; -webkit-transition-duration: .2s; -o-transition-duration: .2s;}
+*:hover{transition-timing-function: ease-in-out; -ms-transition-timing-function: ease-in-out; -moz-transition-timing-function: ease-in-out; -webkit-transition-timing-function: ease-in-out; -o-transition-timing-function: ease-in-out; transition-duration: .2s; -ms-transition-duration: .2s; -moz-transition-duration: .2s; -webkit-transition-duration: .2s; -o-transition-duration: .2s; }
+::selection { color: #000; background:#dbdbdb; }
+::-moz-selection { color:#000; background:#dbdbdb; }
+::-webkit-input-placeholder { color: #6f6f6f; text-overflow: ellipsis;}
+::-moz-placeholder { color: #6f6f6f; text-overflow: ellipsis; opacity:1;} 
+:-ms-input-placeholder { color: #6f6f6f; text-overflow: ellipsis; opacity:1;}
+
+/* ===================================
+    Typography
+====================================== */
+
+h3 {font-family: Forte; margin-bottom: 0.5rem; color: #444848;}
+.big {font-size: x-large;}
+
+/* ===================================
+    Typography Color
+====================================== */
+
+a:hover.menu{color: #3D3BAF;}
+
+/* ===================================
+    Background Color
+====================================== */
+
+.rojo {background-color: #F65A5A;}
+.azul {background-color: #00B2BD;}
+
+/* ===================================
+    Custom
+====================================== */
+
+.max-height-80 {max-height: 80%; }
+.height-60 {max-height: 60%; }
+hr {background-color:#8A8D8E;}
+.ninguno {list-style: none;}
+.borde-input{
+    border: solid 1px black;    
+    border-color: #767676;
+    border-radius: 3px;
+    padding-right: 3.55rem;
+    padding-left: 3rem;
+    padding-bottom: 0.3rem;
+    padding-top: 0.1rem;
+}
+.notextarea{
+    margin: 0 !important;
+    padding: 0;
+    height: 2rem;
+    resize: none;
+    width: 5rem;
+    margin-bottom: -0.55rem !important;
+}
+/***********stock***********/
+.contProd {
+    position: relative;
+}
+
+.image {
+    display: block;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 70%;
+    opacity: 0;
+    transition: .5s ease;
+}
+
+.contProd:hover .overlay {
+    opacity: 1;
+}
+
+.lof {
+    border: #bfb263 Solid 3px; 
+    background-color: white;
+    border-radius: 10px;
+}
+.font {
+    border: #007793 Solid 3px; 
+    background-color: white;
+    border-radius: 10px;
+}
+.mata {
+    border: #b9a475 Solid 3px; 
+    background-color: white;
+    border-radius: 10px;
+}
+.chard {
+    border: #e1abb3 Solid 3px; 
+    background-color: white;
+    border-radius: 10px;
+}
+.jur {
+    border: #589375 Solid 3px; 
+    background-color: white;
+    border-radius: 10px;
+}
+.texto-stock {
+    margin-top:20%;
+    margin-left: 10%;
+    font-size: small;
+}
+
+/*****************************/
+
+/* ===================================
+    Margin
+====================================== */
+
+.margen-arriba-1 {margin-top: 1rem;}
+.margen-arriba-3 {margin-top: 3rem;}
+.margin-arriba-neg3 {margin-top: -3rem;}
+.margin-arriba-neg5 {margin-top: -5rem;}
+.margin-arriba-neg6 {margin-top: -6rem;}
+.margin-arriba-neg7 {margin-top: -7rem;}
+.margen-abajo-1 {margin-bottom: 1.5rem;}
+.margen-abajo-1 {margin-bottom: 1rem;}
+.padding-error {padding: 5%; margin-right: 50%;}
+.padding-error-nocli {padding: 2%; margin-right: 60%;}
+.margen-izda-1 {margin-left: 1.1rem;}
+.margen-izda-2 {margin-left: 2rem;}
+.margen-izda-4 {margin-left: 4rem;}
+.margen-izda-6 {margin-left: 6.5rem;}
+.margen-izda-8 {margin-left: 8rem;}
+.margen-dcha-1 {margin-right: 1rem;}
+
+/* ===================================
+    Popup
+====================================== */
+
+/* Popup container */
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* The actual popup (appears on top) */
+.popup .popuptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+
+
+.hover_bkgr_fricc{
+    background:rgba(0,0,0,.4);
+    cursor:pointer;
+    display:none;
+    height:100%;
+    position:fixed;
+    text-align:center;
+    top:0;
+    width:100%;
+    z-index:10000;
+}
+.hover_bkgr_fricc .helper{
+    display:inline-block;
+    height:100%;
+    vertical-align:middle;
+}
+.hover_bkgr_fricc > div {
+    background-color: #fff;
+    box-shadow: 10px 10px 60px #555;
+    display: inline-block;
+    height: auto;
+    max-width: 551px;
+    min-height: 100px;
+    vertical-align: middle;
+    width: 60%;
+    position: relative;
+    border-radius: 8px;
+    padding: 15px 5%;
+}
+.popupCloseButton {
+    background-color: #fff;
+    border: 3px solid #999;
+    border-radius: 50px;
+    cursor: pointer;
+    display: inline-block;
+    font-family: arial;
+    font-weight: bold;
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    font-size: 25px;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+.popupCloseButton:hover {
+    background-color: #ccc;
+}
+.trigger_popup_fricc {
+    cursor: pointer;
+    font-size: 20px;
+    margin: 20px;
+    display: inline-block;
+    font-weight: bold;
+}
+
+
+/* popup create orders */
+.hover_bkgr_fricc_2{
+    background:rgba(0,0,0,.4);
+    cursor:pointer;
+    display:none;
+    height:100%;
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:10000;
+}
+.hover_bkgr_fricc_2 .helper{
+    display:inline-block;
+    height:100%;
+    vertical-align:middle;
+}
+.hover_bkgr_fricc_2 > div {
+    background-color: #fff;
+    box-shadow: 10px 10px 60px #555;
+    display: inline-block;
+    height: auto;
+    max-width: 1000px;
+    min-height: 120px;
+    vertical-align: middle;
+    width: 80%;
+    position: relative;
+    border-radius: 8px;
+    padding: 15px 5%;
+    margin-left: 15%;
+}
+.popupCloseButton_2 {
+    background-color: #fff;
+    border: 3px solid #999;
+    border-radius: 50px;
+    cursor: pointer;
+    display: inline-block;
+    font-family: arial;
+    font-weight: bold;
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    font-size: 25px;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+.popupCloseButton_2:hover {
+    background-color: #ccc;
+}
+.trigger_popup_fricc_2 {
+    cursor: pointer;
+    font-size: 20px;
+    margin: 20px;
+    display: inline-block;
+    font-weight: bold;
+}
+/* ===================================
+    Button
+====================================== */
+
+.btn {display:inline-block; border:2px solid transparent; color: #fff !important; letter-spacing: .5px; line-height: inherit; border-radius: 0; text-transform: uppercase; width: auto; font-family: 'Montserrat', sans-serif; font-weight: 600; transition-duration: 0.3s; transition-timing-function: ease-in-out; white-space: nowrap;}
+
+.btn.btn-black {background:#000000; color: #fff}
+.btn.btn-black:hover, .btn.btn-black:focus {background: transparent; color: #000 !important; text-decoration: none !important;}
+
+.buttonPed {
+    background-color: #B1DDEC;
+    box-shadow: 2px 2px 10px #BBBABA;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 11px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 15px;
+    margin-left: 8rem;
+    margin-bottom: 1rem;
+
+}
+
+/* ===================================
+    Table
+====================================== */
+
+.bordes-table {
+    border: groove 1px #EDD6D6;    
+}
+.width-table {
+    width: 60%;
+}

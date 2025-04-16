@@ -1,0 +1,48 @@
+@charset "utf-8";
+
+/* ----------------------------------
+
+Name: responsive.css
+Version: 1
+
+-------------------------------------
+
+Table of contents
+        
+   
+*/
+
+@media only screen and (max-width: 1025px){
+    .margin0{
+        margin-top: 0 !important;
+    }
+    .height-150{
+        height: 150px;
+    }
+    .bot-50{
+        height: 50%;
+    }
+    .bot-60{
+        height: 60%;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    .padding-error {margin-right: 0 !important;}
+
+}
+/************ ancho select ***************/
+@media only screen and (max-width: 1135px){
+    .anchomov { 
+        width: 50% !important;
+        height: 150% !important;
+    }
+
+}
+
+@media only screen and (max-width: 570px){
+    .escondido { 
+        display: none !important;
+    }
+
+}

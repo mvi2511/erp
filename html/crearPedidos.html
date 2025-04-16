@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ERPeqEmp: Bodega VinosLOF</title>
+	<meta charset="utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1" />
+    <meta name="author" content="Maria del Valle Iglesias">
+    <!-- description -->
+    <meta name="description" content="ERP for small companies">
+    <!-- favicon -->
+    <link rel="shortcut icon" href="../images/favicon.png">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <!-- style -->
+    <link rel="stylesheet" href="../css/style.css" />
+    <!-- responsive css -->
+    <link rel="stylesheet" href="../css/responsive.css" />
+</head>
+<body>
+    <!-- menu popup -->
+    <a class="trigger_popup_fricc btn btn-black">MENÚ</a>
+    <div class="hover_bkgr_fricc">
+        <span class="helper"></span>
+        <div>
+            <div class="popupCloseButton">&times;</div>
+            <p><a class="menu" href="../index.html">Home</a></p>
+            <p><a class="menu" href="clientes.html">Clientes</a></p>
+            <p><a class="menu" href="pedidos.html">Pedidos</a></p>
+            <p><a class="menu" href="stock.html">Stock</a></p>
+        </div>
+    </div>
+    <!-- end of menu -->  
+    <!-- add order to data base -->       
+    <div class="container">
+        <h2>BÚSQUEDA CLIENTE</h2>
+        <p>Buscar por nombre/apellidos <input type="radio" name="modobusCliPed" value="nombre" checked="checked"></p>
+        <p>Búsqueda: <input type="text" id="buscar" name="buscar"/></p><br />
+        <p>Buscar por NIF/CIF <input type="radio" name="modobusCliPed" value="nif"></p>
+        <p>Búsqueda: <input type="text" id="buscanif" name="buscanif"/></p><br />
+        <p>Buscar por teléfono <input type="radio" name="modobusCliPed" value="telefono"></p>
+        <p>Búsqueda: <input type="text" id="buscatel" name="buscatel"/></p><br />
+        <button id="buscarCliPedidos" style="border: solid grey 1px; background-color: silver;">Buscar</button>
+            
+    </div> 
+    <!-- end options menu -->
+   
+    <!-- js -->
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
+</body>
+</html>
